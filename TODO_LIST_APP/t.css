@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+}
+
+.todo-container {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 30px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: slideUp 1s ease-out;
+}
+
+h1.glow {
+  text-align: center;
+  color: #00ffe7;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  text-shadow: 0 0 15px black;
+ 
+}
+
+.input-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#task-input {
+  flex: 1;
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  background: #1a1a1a;
+  color: #fff;
+  transition: 0.3s;
+}
+
+#task-input:focus {
+  outline: none;
+  box-shadow: 0 0 5px #00ffe7;
+}
+
+#add-btn {
+  padding: 15px 20px;
+  border: none;
+  border-radius: 10px;
+  background: #00ffe7;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#add-btn:hover {
+  background: #00bfa6;
+  transform: scale(1.05);
+}
+
+#task-list {
+  list-style: none;
+}
+
+.task {
+  background: rgba(255, 255, 255, 0.07);
+  padding: 15px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s;
+  animation: fadeIn 0.5s ease;
+}
+
+.task:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 10px #00ffe7;
+}
+
+.task span {
+  flex: 1;
+  padding-right: 10px;
+  cursor: pointer;
+}
+
+.task button {
+  background: transparent;
+  border: none;
+  color: #ff5c5c;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.task button:hover {
+  transform: rotate(90deg);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    text-shadow: 0 0 15px #00ffe7;
+  }
+  50% {
+    text-shadow: 0 0 25px #00ffe7, 0 0 35px #00ffe7;
+  }
+  100% {
+    text-shadow: 0 0 15px #00ffe7;
+  }
+}
